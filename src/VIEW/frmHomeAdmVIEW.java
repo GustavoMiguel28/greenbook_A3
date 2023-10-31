@@ -6,7 +6,9 @@ package VIEW;
 
 import DAO.UsuarioDAO;
 import DTO.UsuarioDTO;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +21,7 @@ public class frmHomeAdmVIEW extends javax.swing.JFrame {
      */
     public frmHomeAdmVIEW() {
         initComponents();
+        listarUsuarios();
     }
 
     /**
@@ -36,6 +39,12 @@ public class frmHomeAdmVIEW extends javax.swing.JFrame {
         txtCadastrarLogin = new javax.swing.JTextField();
         txtCadastrarSenha = new javax.swing.JTextField();
         btnCadastrarUsuario = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblUsuarios = new javax.swing.JTable();
+        btnEditarUsuario = new javax.swing.JButton();
+        btnDeletarUsuario = new javax.swing.JButton();
+        lblCadastrarId = new javax.swing.JLabel();
+        txtCadastrarId = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,40 +62,93 @@ public class frmHomeAdmVIEW extends javax.swing.JFrame {
             }
         });
 
+        tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID", "Nome", "Senha"
+            }
+        ));
+        jScrollPane2.setViewportView(tblUsuarios);
+
+        btnEditarUsuario.setText("EDITAR");
+        btnEditarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarUsuarioActionPerformed(evt);
+            }
+        });
+
+        btnDeletarUsuario.setText("DELETAR");
+
+        lblCadastrarId.setText("Id:");
+
+        txtCadastrarId.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblCadastrarLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblCadastrarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCadastrarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtCadastrarLogin, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblCadastrarUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtCadastrarSenha, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblCadastrarLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblCadastrarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblCadastrarId, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtCadastrarLogin)
+                                    .addComponent(txtCadastrarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCadastrarId))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnEditarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnDeletarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addComponent(lblCadastrarUsuario)))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addContainerGap()
                 .addComponent(lblCadastrarUsuario)
-                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCadastrarId)
+                            .addComponent(txtCadastrarId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCadastrarLogin)
+                            .addComponent(txtCadastrarLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCadastrarSenha)
+                            .addComponent(txtCadastrarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCadastrarLogin)
-                    .addComponent(txtCadastrarLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCadastrarSenha)
-                    .addComponent(txtCadastrarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addComponent(btnCadastrarUsuario)
-                .addContainerGap(53, Short.MAX_VALUE))
+                    .addComponent(btnEditarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDeletarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
         );
 
         pack();
@@ -94,7 +156,13 @@ public class frmHomeAdmVIEW extends javax.swing.JFrame {
 
     private void btnCadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarUsuarioActionPerformed
         cadastrar();
+        listarUsuarios();
+        limparCampos();
     }//GEN-LAST:event_btnCadastrarUsuarioActionPerformed
+
+    private void btnEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUsuarioActionPerformed
+        carregarCampos();
+    }//GEN-LAST:event_btnEditarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,9 +201,15 @@ public class frmHomeAdmVIEW extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrarUsuario;
+    private javax.swing.JButton btnDeletarUsuario;
+    private javax.swing.JButton btnEditarUsuario;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblCadastrarId;
     private javax.swing.JLabel lblCadastrarLogin;
     private javax.swing.JLabel lblCadastrarSenha;
     private javax.swing.JLabel lblCadastrarUsuario;
+    private javax.swing.JTable tblUsuarios;
+    private javax.swing.JTextField txtCadastrarId;
     private javax.swing.JTextField txtCadastrarLogin;
     private javax.swing.JTextField txtCadastrarSenha;
     // End of variables declaration//GEN-END:variables
@@ -154,5 +228,41 @@ public class frmHomeAdmVIEW extends javax.swing.JFrame {
         objnovousuariodao.cadastrarUsuario(objnovousuariodto);
         
         JOptionPane.showMessageDialog(null, "Novo usuário cadastrado no sistema!");
+    }
+    
+    private void listarUsuarios() {
+        try {
+            UsuarioDAO objusuariodao = new UsuarioDAO();
+            
+            DefaultTableModel model = (DefaultTableModel) tblUsuarios.getModel();
+            model.setNumRows(0);
+            
+            ArrayList<UsuarioDTO> lista = objusuariodao.pesquisarUsuario();
+            
+            for(int num = 0; num < lista.size(); num ++) {
+                model.addRow(new Object[] {
+                    lista.get(num).getId_usuario(),
+                    lista.get(num).getNome_usuario(),
+                    lista.get(num).getSenha_usuario()
+                });
+            }
+            
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "frmHomeAdmVIEW" + erro);
+        }
+    }
+    
+    private void limparCampos() {
+        txtCadastrarId.setText("");
+        txtCadastrarLogin.setText("");
+        txtCadastrarSenha.setText("");
+    }
+    
+    private void carregarCampos() {
+        int setar = tblUsuarios.getSelectedRow();
+        
+        txtCadastrarId.setText(tblUsuarios.getModel().getValueAt(setar, 0).toString());
+        txtCadastrarLogin.setText(tblUsuarios.getModel().getValueAt(setar, 1).toString());
+        txtCadastrarSenha.setText(tblUsuarios.getModel().getValueAt(setar, 2).toString());
     }
 }
