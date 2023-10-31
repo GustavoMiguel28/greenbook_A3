@@ -9,8 +9,9 @@ import javax.swing.JOptionPane;
  */
 public class frmAdmEditarVIEW extends javax.swing.JFrame {
 
-    public frmAdmEditarVIEW() {
+    public frmAdmEditarVIEW(UsuarioDTO objusuariodto) {
         initComponents();
+        carregarDadosUsuarioEditar(objusuariodto);
     }
 
     /**
@@ -92,6 +93,8 @@ public class frmAdmEditarVIEW extends javax.swing.JFrame {
 
         lblNumero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblNumero.setText("Rua:");
+
+        txtId.setEnabled(false);
 
         lblIdade.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblIdade.setText("Idade");
@@ -260,7 +263,8 @@ public class frmAdmEditarVIEW extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmAdmEditarVIEW().setVisible(true);
+                UsuarioDTO objusuariodto = new UsuarioDTO();
+                new frmAdmEditarVIEW(objusuariodto).setVisible(true);
             }
         });
     }
@@ -326,5 +330,34 @@ public class frmAdmEditarVIEW extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null, "Usuário editado no sistema!");
                 
+    }
+    
+    private void carregarDadosUsuarioEditar(UsuarioDTO objusuariodto) {
+        String login_usuario, senha_usuario, nome_usuario, sexo_usuario, email_usuario, estado_usuario, cidade_usuario, rua_usuario;
+        int id_usuario, idade_usuario, numero_usuario;
+        
+        id_usuario = objusuariodto.getId_usuario();
+        login_usuario = objusuariodto.getLogin_usuario();
+        senha_usuario = objusuariodto.getSenha_usuario();
+        nome_usuario = objusuariodto.getNome_usuario();
+        sexo_usuario = objusuariodto.getSexo_usuario();
+        idade_usuario = objusuariodto.getIdade_usuario();
+        email_usuario = objusuariodto.getEmail_usuario();
+        estado_usuario = objusuariodto.getEstado_usuario();
+        cidade_usuario = objusuariodto.getCidade_usuario();
+        rua_usuario = objusuariodto.getRua_usuario();
+        numero_usuario = objusuariodto.getNumero_usuario();
+        
+        txtId.setText(Integer.toString(id_usuario));
+        txtLogin.setText(login_usuario);
+        txtSenha.setText(senha_usuario);
+        txtNome.setText(nome_usuario);
+        txtSexo.setText(sexo_usuario);
+        txtIdade.setText(Integer.toString(idade_usuario));
+        txtEmail.setText(email_usuario);
+        txtEstado.setText(estado_usuario);
+        txtCidade.setText(cidade_usuario);
+        txtRua.setText(rua_usuario);
+        txtNumero.setText(Integer.toString(numero_usuario));
     }
 }

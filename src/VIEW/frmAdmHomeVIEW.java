@@ -162,7 +162,9 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarUsuarioActionPerformed
 
     private void btnEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUsuarioActionPerformed
-        frmAdmEditarVIEW objfrmadmeditarview = new frmAdmEditarVIEW();
+        UsuarioDTO objusuariodto = usuarioEditarSelecionado();
+        
+        frmAdmEditarVIEW objfrmadmeditarview = new frmAdmEditarVIEW(objusuariodto);
         objfrmadmeditarview.setVisible(true);
         
             dispose();
@@ -247,6 +249,40 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(null, "frmHomeAdmVIEW" + erro);
         }
+    }
+    
+    private UsuarioDTO usuarioEditarSelecionado() {
+        int index = tblUsuarios.getSelectedRow();
+        
+        String login_usuario, senha_usuario, nome_usuario, sexo_usuario, email_usuario, estado_usuario, cidade_usuario, rua_usuario;
+        int id_usuario, idade_usuario, numero_usuario;
+        
+        id_usuario = Integer.parseInt(tblUsuarios.getModel().getValueAt(index, 0).toString());
+        login_usuario = tblUsuarios.getModel().getValueAt(index, 1).toString();
+        senha_usuario = tblUsuarios.getModel().getValueAt(index, 2).toString();
+        nome_usuario = tblUsuarios.getModel().getValueAt(index, 3).toString();
+        sexo_usuario = tblUsuarios.getModel().getValueAt(index, 4).toString();
+        idade_usuario = Integer.parseInt(tblUsuarios.getModel().getValueAt(index, 5).toString());
+        email_usuario = tblUsuarios.getModel().getValueAt(index, 6).toString();
+        estado_usuario = tblUsuarios.getModel().getValueAt(index, 7).toString();
+        cidade_usuario = tblUsuarios.getModel().getValueAt(index, 8).toString();
+        rua_usuario = tblUsuarios.getModel().getValueAt(index, 9).toString();
+        numero_usuario = Integer.parseInt(tblUsuarios.getModel().getValueAt(index, 10).toString());
+        
+        UsuarioDTO objusuariodto = new UsuarioDTO();
+        objusuariodto.setId_usuario(id_usuario);
+        objusuariodto.setLogin_usuario(login_usuario);
+        objusuariodto.setSenha_usuario(senha_usuario);
+        objusuariodto.setNome_usuario(nome_usuario);
+        objusuariodto.setSexo_usuario(sexo_usuario);
+        objusuariodto.setIdade_usuario(idade_usuario);
+        objusuariodto.setEmail_usuario(email_usuario);
+        objusuariodto.setEstado_usuario(estado_usuario);
+        objusuariodto.setCidade_usuario(cidade_usuario);
+        objusuariodto.setRua_usuario(rua_usuario);
+        objusuariodto.setNumero_usuario(numero_usuario);
+        
+        return objusuariodto;
     }
     
     private void excluirUsuario() {
