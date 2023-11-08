@@ -41,7 +41,7 @@ public class UsuarioDAO {
         ArrayList<UsuarioDTO> lista = new ArrayList<>();
         
         try {
-            String sql = "SELECT * FROM usuario ORDER BY 1";
+            String sql = "SELECT * FROM usuario WHERE login_usuario != 'admin' ORDER BY 1";
             pstm = conn.prepareStatement(sql);
             
             ResultSet rs = pstm.executeQuery();
@@ -75,9 +75,9 @@ public class UsuarioDAO {
         
         try {
             String sql = "INSERT INTO usuario "
-                    + "(login_usuario,senha_usuario,nome_usuario,sexo_usuario,idade_usuario,"
-                    + "email_usuario,estado_usuario,cidade_usuario,rua_usuario,numero_usuario) " 
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                         + "(login_usuario,senha_usuario,nome_usuario,sexo_usuario,idade_usuario,"
+                         + "email_usuario,estado_usuario,cidade_usuario,rua_usuario,numero_usuario) " 
+                         + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             pstm = conn.prepareStatement(sql);
             pstm.setString(1, objusuariodto.getLogin_usuario());
             pstm.setString(2, objusuariodto.getSenha_usuario());

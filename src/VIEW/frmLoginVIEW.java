@@ -39,13 +39,22 @@ public class frmLoginVIEW extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocation(new java.awt.Point(350, 175));
-        setMaximumSize(new java.awt.Dimension(750, 500));
         setMinimumSize(new java.awt.Dimension(750, 500));
 
         jPanel1.setBackground(new java.awt.Color(88, 175, 156));
         jPanel1.setMaximumSize(new java.awt.Dimension(750, 70));
         jPanel1.setMinimumSize(new java.awt.Dimension(750, 70));
-        jPanel1.setLayout(null);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(88, 175, 156));
@@ -54,25 +63,18 @@ public class frmLoginVIEW extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtSenhaUsuario.setText("senha");
-        txtSenhaUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtSenhaUsuarioMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtSenhaUsuario)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtSenhaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addContainerGap())
@@ -80,18 +82,11 @@ public class frmLoginVIEW extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtLoginUsuario.setText("Login");
-        txtLoginUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtLoginUsuarioMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtLoginUsuario)
                 .addContainerGap())
@@ -153,14 +148,6 @@ public class frmLoginVIEW extends javax.swing.JFrame {
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         logar();
     }//GEN-LAST:event_btnEntrarActionPerformed
-
-    private void txtLoginUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLoginUsuarioMouseClicked
-        txtLoginUsuario.setText("");
-    }//GEN-LAST:event_txtLoginUsuarioMouseClicked
-
-    private void txtSenhaUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSenhaUsuarioMouseClicked
-        txtSenhaUsuario.setText("");
-    }//GEN-LAST:event_txtSenhaUsuarioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -229,7 +216,7 @@ public class frmLoginVIEW extends javax.swing.JFrame {
                 dispose();
                 
                 } else {
-                frmHomeVIEW objfrmhomeview = new frmHomeVIEW();
+                frmUserHomeVIEW objfrmhomeview = new frmUserHomeVIEW();
                 objfrmhomeview.setVisible(true);
                 
                 dispose();

@@ -82,7 +82,9 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
             }
         });
         tblUsuarios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        tblUsuarios.setPreferredSize(new java.awt.Dimension(2800, 80));
+        tblUsuarios.setMaximumSize(new java.awt.Dimension(2147483647, 2000));
+        tblUsuarios.setMinimumSize(new java.awt.Dimension(165, 290));
+        tblUsuarios.setPreferredSize(new java.awt.Dimension(2000, 290));
         jScrollPane1.setViewportView(tblUsuarios);
         if (tblUsuarios.getColumnModel().getColumnCount() > 0) {
             tblUsuarios.getColumnModel().getColumn(0).setPreferredWidth(35);
@@ -167,7 +169,7 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
         frmAdmEditarVIEW objfrmadmeditarview = new frmAdmEditarVIEW(objusuariodto);
         objfrmadmeditarview.setVisible(true);
         
-            dispose();
+        dispose();
     }//GEN-LAST:event_btnEditarUsuarioActionPerformed
 
     private void btnExcluirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirUsuarioActionPerformed

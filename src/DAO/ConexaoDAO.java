@@ -21,12 +21,6 @@ public class ConexaoDAO {
             "root",
             "root");
             
-            if (conn != null) {
-                System.out.println("Conexão estabelecida com sucesso!");
-            } else {
-                System.out.println("Conexão não estabelecida!");
-            }
-            
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "ConexaoDAO" + erro.getMessage());
         }
