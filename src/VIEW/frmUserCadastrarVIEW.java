@@ -2,6 +2,7 @@ package VIEW;
 
 import DAO.LivroDAO;
 import DTO.LivroDTO;
+import DTO.UsuarioDTO;
 import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
@@ -12,12 +13,12 @@ import javax.swing.JOptionPane;
  * @author Gustavo Moreno
  */
 public class frmUserCadastrarVIEW extends javax.swing.JFrame {
-
-    /**
-     * Creates new form frmAdmCadastar
-     */
-    public frmUserCadastrarVIEW() {
+    
+    UsuarioDTO objusuariodto;
+    
+    public frmUserCadastrarVIEW(UsuarioDTO objusuariodto) {
         initComponents();
+        this.objusuariodto = objusuariodto;
     }
 
     @SuppressWarnings("unchecked")
@@ -25,6 +26,7 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
         lblAutor = new javax.swing.JLabel();
@@ -41,6 +43,7 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
         btnAdicionarImagem = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         txtNomeArquivo = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(350, 175));
@@ -50,33 +53,52 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(750, 70));
         jPanel1.setMinimumSize(new java.awt.Dimension(750, 70));
 
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("GB.");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(619, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        lblId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblId.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblId.setText("Id:");
 
-        lblNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblNome.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblNome.setText("Nome:");
 
-        lblAutor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblAutor.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblAutor.setText("Autor:");
 
-        lblGenero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblGenero.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblGenero.setText("Gênero:");
 
+        txtId.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         txtId.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtId.setEnabled(false);
 
-        lblNota.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtNome.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+
+        txtAutor.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+
+        txtGenero.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+
+        txtNota.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+
+        lblNota.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblNota.setText("Nota:");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -90,10 +112,10 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +125,7 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnCadastrar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +133,7 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
             }
         });
 
-        btnAdicionarImagem.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnAdicionarImagem.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnAdicionarImagem.setText("Img");
         btnAdicionarImagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +141,7 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
             }
         });
 
-        btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnCancelar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,53 +149,49 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
             }
         });
 
+        txtNomeArquivo.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+
+        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(88, 175, 156));
+        jLabel1.setText("GREENBOOK");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(664, 664, 664)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtNomeArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(btnAdicionarImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
-                        .addComponent(btnAdicionarImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNomeArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblGenero)
-                                    .addGap(13, 13, 13))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblNota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtNota, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(90, 90, 90))
+                        .addGap(26, 26, 26)
+                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNota, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNota, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,38 +199,36 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblId))
+                        .addGap(8, 8, 8)
+                        .addComponent(lblId)
+                        .addGap(37, 37, 37)
+                        .addComponent(lblNome)
+                        .addGap(37, 37, 37)
+                        .addComponent(lblAutor)
+                        .addGap(34, 34, 34)
+                        .addComponent(lblGenero)
+                        .addGap(37, 37, 37)
+                        .addComponent(lblNota))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNome)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAutor)
-                            .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblGenero)
-                            .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNota, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNota)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNota, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                            .addComponent(btnAdicionarImagem, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
-                        .addGap(83, 83, 83))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtNomeArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(txtNomeArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdicionarImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(jLabel1))
         );
 
         pack();
@@ -221,33 +237,19 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         cadastrar();
         
-        frmUserHomeVIEW objfrmuserhomeview = new frmUserHomeVIEW();
-        objfrmuserhomeview.setVisible(true);
+        frmUserBibliotecaVIEW objfrmuserbibliotecaview = new frmUserBibliotecaVIEW(objusuariodto);
+        objfrmuserbibliotecaview.setVisible(true);
 
         dispose();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnAdicionarImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarImagemActionPerformed
-        JFileChooser arquivo = new JFileChooser();
-        arquivo.setDialogTitle("Selecione uma imagem");
-        arquivo.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        
-        int op = arquivo.showOpenDialog(this);
-        if (op == JFileChooser.APPROVE_OPTION) {
-            File file = new File("");
-            file = arquivo.getSelectedFile();
-            
-            String nomeArquivo = file.getAbsolutePath();
-            txtNomeArquivo.setText(nomeArquivo);
-            
-            ImageIcon imagem = new ImageIcon(file.getPath());
-            lblImagem.setIcon(new ImageIcon(imagem.getImage().getScaledInstance(lblImagem.getWidth(), lblImagem.getHeight(), Image.SCALE_DEFAULT)));
-        }
+        selecionarImagem();
     }//GEN-LAST:event_btnAdicionarImagemActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        frmUserHomeVIEW objfrmhomeview = new frmUserHomeVIEW();
-        objfrmhomeview.setVisible(true);
+        frmUserBibliotecaVIEW objfrmuserbibliotecaview = new frmUserBibliotecaVIEW(objusuariodto);
+        objfrmuserbibliotecaview.setVisible(true);
                 
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
@@ -289,7 +291,8 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmUserCadastrarVIEW().setVisible(true);
+                UsuarioDTO objusuariodto = new UsuarioDTO();
+                new frmUserCadastrarVIEW(objusuariodto).setVisible(true);
             }
         });
     }
@@ -298,6 +301,8 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
     private javax.swing.JButton btnAdicionarImagem;
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblAutor;
@@ -333,12 +338,30 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
         objlivrodto.setNota_livro(nota_livro);
         
         LivroDAO objlivrodao = new LivroDAO();
-        objlivrodao.cadastrarLivro(objlivrodto);
+        objlivrodao.cadastrarLivro(objlivrodto, objusuariodto);
         
         id_livro = objlivrodao.buscarIdLivro(objlivrodto);
         objlivrodto.setId_livro(id_livro);
-        objlivrodao.cadastrarNota(objlivrodto);
+        objlivrodao.cadastrarNota(objlivrodto, objusuariodto);
         
         JOptionPane.showMessageDialog(null, "Novo livro cadastrado no sistema!");
+    }
+    
+    public void selecionarImagem() {
+        JFileChooser arquivo = new JFileChooser();
+        arquivo.setDialogTitle("Selecione uma imagem");
+        arquivo.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        
+        int op = arquivo.showOpenDialog(this);
+        if (op == JFileChooser.APPROVE_OPTION) {
+            File file = new File("");
+            file = arquivo.getSelectedFile();
+            
+            String nomeArquivo = file.getAbsolutePath();
+            txtNomeArquivo.setText(nomeArquivo);
+            
+            ImageIcon imagem = new ImageIcon(file.getPath());
+            lblImagem.setIcon(new ImageIcon(imagem.getImage().getScaledInstance(lblImagem.getWidth(), lblImagem.getHeight(), Image.SCALE_DEFAULT)));
+        }
     }
 }

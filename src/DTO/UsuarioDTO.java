@@ -6,8 +6,8 @@ package DTO;
 
 public class UsuarioDTO {
     
-    private int id_usuario, idade_usuario, numero_usuario;
-    private String login_usuario, senha_usuario, nome_usuario, sexo_usuario, email_usuario, estado_usuario, cidade_usuario, rua_usuario;
+    private int id_usuario, idade_usuario;
+    private String login_usuario, senha_usuario, nome_usuario, sexo_usuario, tipo_usuario, email_usuario, estado_usuario, cidade_usuario, rua_usuario;
 
     public int getId_usuario() {
         return id_usuario;
@@ -56,7 +56,15 @@ public class UsuarioDTO {
     public void setIdade_usuario(int idade_usuario) {
         this.idade_usuario = idade_usuario;
     }
+    
+    public String getTipo_usuario() {
+        return tipo_usuario;
+    }
 
+    public void setTipo_usuario(String tipo_usuario) {
+        this.tipo_usuario = tipo_usuario;
+    }
+    
     public String getEmail_usuario() {
         return email_usuario;
     }
@@ -87,13 +95,5 @@ public class UsuarioDTO {
 
     public void setRua_usuario(String rua_usuario) {
         this.rua_usuario = rua_usuario;
-    }
-
-    public int getNumero_usuario() {
-        return numero_usuario;
-    }
-
-    public void setNumero_usuario(int numero_usuario) {
-        this.numero_usuario = numero_usuario;
     }
 }

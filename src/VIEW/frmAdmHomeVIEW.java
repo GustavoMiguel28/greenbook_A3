@@ -30,11 +30,13 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUsuarios = new javax.swing.JTable();
         btnCadastrarUsuario = new javax.swing.JButton();
         btnExcluirUsuario = new javax.swing.JButton();
         btnEditarUsuario = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(350, 175));
@@ -44,30 +46,40 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(750, 70));
         jPanel1.setMinimumSize(new java.awt.Dimension(750, 70));
 
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("GB.");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(619, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 
-        tblUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tblUsuarios.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Login", "Senha", "Nome", "Sexo", "Idade", "Email", "Estado", "Cidade", "Rua", "Número"
+                "Id", "Login", "Senha", "Nome", "Sexo", "Idade", "Tipo", "Email", "Estado", "Cidade", "Rua"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false, false, false
@@ -93,13 +105,14 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
             tblUsuarios.getColumnModel().getColumn(3).setPreferredWidth(250);
             tblUsuarios.getColumnModel().getColumn(4).setPreferredWidth(150);
             tblUsuarios.getColumnModel().getColumn(5).setPreferredWidth(100);
-            tblUsuarios.getColumnModel().getColumn(6).setPreferredWidth(250);
+            tblUsuarios.getColumnModel().getColumn(6).setPreferredWidth(100);
             tblUsuarios.getColumnModel().getColumn(7).setPreferredWidth(100);
             tblUsuarios.getColumnModel().getColumn(8).setPreferredWidth(250);
             tblUsuarios.getColumnModel().getColumn(9).setPreferredWidth(250);
             tblUsuarios.getColumnModel().getColumn(10).setPreferredWidth(150);
         }
 
+        btnCadastrarUsuario.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         btnCadastrarUsuario.setText("Cadastrar");
         btnCadastrarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +120,7 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
             }
         });
 
+        btnExcluirUsuario.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         btnExcluirUsuario.setText("Excluir");
         btnExcluirUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +128,7 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
             }
         });
 
+        btnEditarUsuario.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         btnEditarUsuario.setText("Editar");
         btnEditarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,22 +136,29 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(88, 175, 156));
+        jLabel1.setText("GREENBOOK");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEditarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnExcluirUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnEditarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(257, 257, 257)
+                .addComponent(btnExcluirUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(664, 664, 664)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,13 +166,13 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnEditarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExcluirUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jLabel1))
         );
 
         pack();
@@ -164,19 +186,31 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarUsuarioActionPerformed
 
     private void btnEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarUsuarioActionPerformed
-        UsuarioDTO objusuariodto = usuarioEditarSelecionado();
+        int index = tblUsuarios.getSelectedRow();
         
-        frmAdmEditarVIEW objfrmadmeditarview = new frmAdmEditarVIEW(objusuariodto);
-        objfrmadmeditarview.setVisible(true);
+        if (index == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione um usuário!");
+        } else {
+            UsuarioDTO objusuariodto = usuarioEditarSelecionado();
         
-        dispose();
+            frmAdmEditarVIEW objfrmadmeditarview = new frmAdmEditarVIEW(objusuariodto);
+            objfrmadmeditarview.setVisible(true);
+        
+            dispose();
+        }     
     }//GEN-LAST:event_btnEditarUsuarioActionPerformed
 
     private void btnExcluirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirUsuarioActionPerformed
-        excluirUsuario();
-        listarUsuarios();
+        int index = tblUsuarios.getSelectedRow();
         
-        JOptionPane.showMessageDialog(null, "Usuário excluido do sistema!");
+        if (index == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione um usuário!");
+        } else {
+           excluirUsuario();
+            listarUsuarios();
+        
+            JOptionPane.showMessageDialog(null, "Usuário excluido do sistema!"); 
+        }
     }//GEN-LAST:event_btnExcluirUsuarioActionPerformed
 
     /**
@@ -218,6 +252,8 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastrarUsuario;
     private javax.swing.JButton btnEditarUsuario;
     private javax.swing.JButton btnExcluirUsuario;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblUsuarios;
@@ -230,7 +266,7 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) tblUsuarios.getModel();
             model.setNumRows(0);
             
-            ArrayList<UsuarioDTO> lista = objusuariodao.pesquisarUsuario();
+            ArrayList<UsuarioDTO> lista = objusuariodao.pesquisarUsuarios();
             
             for(int num = 0; num < lista.size(); num ++) {
                 model.addRow(new Object[] {
@@ -240,11 +276,11 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
                     lista.get(num).getNome_usuario(),
                     lista.get(num).getSexo_usuario(),
                     lista.get(num).getIdade_usuario(),
+                    lista.get(num).getTipo_usuario(),
                     lista.get(num).getEmail_usuario(),
                     lista.get(num).getEstado_usuario(),
                     lista.get(num).getCidade_usuario(),
-                    lista.get(num).getRua_usuario(),
-                    lista.get(num).getNumero_usuario()
+                    lista.get(num).getRua_usuario()
                 });
             }
             
@@ -256,8 +292,8 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
     private UsuarioDTO usuarioEditarSelecionado() {
         int index = tblUsuarios.getSelectedRow();
         
-        String login_usuario, senha_usuario, nome_usuario, sexo_usuario, email_usuario, estado_usuario, cidade_usuario, rua_usuario;
-        int id_usuario, idade_usuario, numero_usuario;
+        String login_usuario, senha_usuario, nome_usuario, sexo_usuario, tipo_usuario, email_usuario, estado_usuario, cidade_usuario, rua_usuario;
+        int id_usuario, idade_usuario;
         
         id_usuario = Integer.parseInt(tblUsuarios.getModel().getValueAt(index, 0).toString());
         login_usuario = tblUsuarios.getModel().getValueAt(index, 1).toString();
@@ -265,11 +301,11 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
         nome_usuario = tblUsuarios.getModel().getValueAt(index, 3).toString();
         sexo_usuario = tblUsuarios.getModel().getValueAt(index, 4).toString();
         idade_usuario = Integer.parseInt(tblUsuarios.getModel().getValueAt(index, 5).toString());
-        email_usuario = tblUsuarios.getModel().getValueAt(index, 6).toString();
-        estado_usuario = tblUsuarios.getModel().getValueAt(index, 7).toString();
-        cidade_usuario = tblUsuarios.getModel().getValueAt(index, 8).toString();
-        rua_usuario = tblUsuarios.getModel().getValueAt(index, 9).toString();
-        numero_usuario = Integer.parseInt(tblUsuarios.getModel().getValueAt(index, 10).toString());
+        tipo_usuario = tblUsuarios.getModel().getValueAt(index, 6).toString();
+        email_usuario = tblUsuarios.getModel().getValueAt(index, 7).toString();
+        estado_usuario = tblUsuarios.getModel().getValueAt(index, 8).toString();
+        cidade_usuario = tblUsuarios.getModel().getValueAt(index, 9).toString();
+        rua_usuario = tblUsuarios.getModel().getValueAt(index, 10).toString();
         
         UsuarioDTO objusuariodto = new UsuarioDTO();
         objusuariodto.setId_usuario(id_usuario);
@@ -278,11 +314,11 @@ public class frmAdmHomeVIEW extends javax.swing.JFrame {
         objusuariodto.setNome_usuario(nome_usuario);
         objusuariodto.setSexo_usuario(sexo_usuario);
         objusuariodto.setIdade_usuario(idade_usuario);
+        objusuariodto.setTipo_usuario(tipo_usuario);
         objusuariodto.setEmail_usuario(email_usuario);
         objusuariodto.setEstado_usuario(estado_usuario);
         objusuariodto.setCidade_usuario(cidade_usuario);
         objusuariodto.setRua_usuario(rua_usuario);
-        objusuariodto.setNumero_usuario(numero_usuario);
         
         return objusuariodto;
     }

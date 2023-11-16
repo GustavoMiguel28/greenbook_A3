@@ -10,11 +10,11 @@ import javax.swing.JOptionPane;
 /*
  * @author Gustavo Moreno
  */
-public class frmUserAvaliarVIEW extends javax.swing.JFrame {
+public class frmUserRecomendadosAvaliarVIEW extends javax.swing.JFrame {
     
     UsuarioDTO objusuariodto;
     
-    public frmUserAvaliarVIEW(LivroDTO objlivrodto, UsuarioDTO objusuariodto) {
+    public frmUserRecomendadosAvaliarVIEW(LivroDTO objlivrodto, UsuarioDTO objusuariodto) {
         initComponents();
         carregarDadosLivroAvaliar(objlivrodto);
         this.objusuariodto = objusuariodto;
@@ -257,15 +257,15 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
     private void btnAvaliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaliarActionPerformed
         avaliarLivro();
         
-        frmUserBibliotecaVIEW objfrmuserbibliotecaview = new frmUserBibliotecaVIEW(objusuariodto);
-        objfrmuserbibliotecaview.setVisible(true);
+        frmUserRecomendadosMaisVIEW objfrmuserrecomendadosmaisview = new frmUserRecomendadosMaisVIEW(objusuariodto);
+        objfrmuserrecomendadosmaisview.setVisible(true);
 
         dispose();
     }//GEN-LAST:event_btnAvaliarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        frmUserBibliotecaVIEW objfrmuserbibliotecaview = new frmUserBibliotecaVIEW(objusuariodto);
-        objfrmuserbibliotecaview.setVisible(true);
+        frmUserRecomendadosMaisVIEW objfrmuserrecomendadosmaisview = new frmUserRecomendadosMaisVIEW(objusuariodto);
+        objfrmuserrecomendadosmaisview.setVisible(true);
 
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
@@ -291,14 +291,46 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmUserAvaliarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmUserRecomendadosAvaliarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmUserAvaliarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmUserRecomendadosAvaliarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmUserAvaliarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmUserRecomendadosAvaliarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmUserAvaliarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmUserRecomendadosAvaliarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -337,7 +369,7 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
             public void run() {
                 LivroDTO objlivrodto = new LivroDTO();
                 UsuarioDTO objusuariodto = new UsuarioDTO();
-                new frmUserAvaliarVIEW(objlivrodto, objusuariodto).setVisible(true);
+                new frmUserRecomendadosAvaliarVIEW(objlivrodto, objusuariodto).setVisible(true);
             }
         });
     }
