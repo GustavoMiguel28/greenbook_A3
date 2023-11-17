@@ -37,7 +37,9 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="btnCadastrarLivro" min="-2" pref="180" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="378" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnEditarLivro" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="272" max="-2" attributes="0"/>
                       <Component id="btnExcluirLivro" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" min="-2" pref="650" max="-2" attributes="0"/>
@@ -62,7 +64,10 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnCadastrarLivro" pref="40" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnCadastrarLivro" alignment="3" pref="40" max="32767" attributes="0"/>
+                      <Component id="btnEditarLivro" alignment="3" pref="40" max="32767" attributes="0"/>
+                  </Group>
                   <Component id="btnExcluirLivro" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="32767" attributes="0"/>
@@ -314,6 +319,17 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirLivroActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEditarLivro">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Editar livro"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarLivroActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

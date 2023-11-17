@@ -286,6 +286,29 @@ public class LivroDAO {
         }
     }
     
+    public void editarLivro(LivroDTO objlivrodto) {
+        conn = new ConexaoDAO().conectaBD();
+        
+        try {
+            String sql = "UPDATE livro SET "
+                         + "nome_livro = ?"
+                         + ", autor_livro = ?"
+                         + ", genero_livro = ? "
+                         + "WHERE id_livro = ?";
+            pstm = conn.prepareStatement(sql);
+            pstm.setString(1, objlivrodto.getNome_livro());
+            pstm.setString(2, objlivrodto.getAutor_livro());
+            pstm.setString(3, objlivrodto.getGenero_livro());
+            pstm.setInt(4, objlivrodto.getId_livro());
+            
+            pstm.execute();
+            pstm.close();
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "LivroDAO" + erro);
+        }
+    }
+    
     public void excluirLivro(LivroDTO objlivrodto) {
         conn = new ConexaoDAO().conectaBD();
         

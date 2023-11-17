@@ -40,6 +40,7 @@ public class frmUserMeuslivrosMeuslivrosVIEW extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnCadastrarLivro = new javax.swing.JButton();
         btnExcluirLivro = new javax.swing.JButton();
+        btnEditarLivro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(350, 175));
@@ -180,6 +181,14 @@ public class frmUserMeuslivrosMeuslivrosVIEW extends javax.swing.JFrame {
             }
         });
 
+        btnEditarLivro.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        btnEditarLivro.setText("Editar livro");
+        btnEditarLivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarLivroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -189,7 +198,9 @@ public class frmUserMeuslivrosMeuslivrosVIEW extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCadastrarLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(378, 378, 378)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEditarLivro)
+                        .addGap(272, 272, 272)
                         .addComponent(btnExcluirLivro))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -207,7 +218,9 @@ public class frmUserMeuslivrosMeuslivrosVIEW extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCadastrarLivro, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnCadastrarLivro, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                        .addComponent(btnEditarLivro, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
                     .addComponent(btnExcluirLivro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,6 +272,21 @@ public class frmUserMeuslivrosMeuslivrosVIEW extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnExcluirLivroActionPerformed
 
+    private void btnEditarLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarLivroActionPerformed
+        int index = tblLivros.getSelectedRow();
+        
+        if (index == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione um livro!");
+        } else {
+            LivroDTO objlivrodto = livroEditarSelecionado();
+        
+            frmUserMeuslivrosEditarVIEW objfrmusermeuslivroseditarview = new frmUserMeuslivrosEditarVIEW(objlivrodto, this.objusuariodto);
+            objfrmusermeuslivroseditarview.setVisible(true);
+        
+            dispose();
+        }
+    }//GEN-LAST:event_btnEditarLivroActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -305,6 +333,7 @@ public class frmUserMeuslivrosMeuslivrosVIEW extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBiblioteca;
     private javax.swing.JButton btnCadastrarLivro;
+    private javax.swing.JButton btnEditarLivro;
     private javax.swing.JButton btnExcluirLivro;
     private javax.swing.JButton btnMeuslivros;
     private javax.swing.JButton btnRecomendados;
@@ -338,6 +367,31 @@ public class frmUserMeuslivrosMeuslivrosVIEW extends javax.swing.JFrame {
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(null, "frmUserMeuslivrosMeuslivrosVIEW" + erro);
         }
+    }
+    
+    private LivroDTO livroEditarSelecionado() {
+        int index = tblLivros.getSelectedRow();
+        
+        int id_livro, qtd_notas;
+        String nome_livro, autor_livro, genero_livro;
+        double nota_livro;
+        
+        id_livro = Integer.parseInt(tblLivros.getModel().getValueAt(index, 0).toString());
+        nome_livro = tblLivros.getModel().getValueAt(index, 1).toString();
+        autor_livro = tblLivros.getModel().getValueAt(index, 2).toString();
+        genero_livro = tblLivros.getModel().getValueAt(index, 3).toString();
+        qtd_notas = Integer.parseInt(tblLivros.getModel().getValueAt(index, 4).toString());
+        nota_livro = Double.parseDouble(tblLivros.getModel().getValueAt(index, 5).toString());
+        
+        LivroDTO objlivrodto = new LivroDTO();
+        objlivrodto.setId_livro(id_livro);
+        objlivrodto.setNome_livro(nome_livro);
+        objlivrodto.setAutor_livro(autor_livro);
+        objlivrodto.setGenero_livro(genero_livro);
+        objlivrodto.setQtd_notas(qtd_notas);
+        objlivrodto.setNota_livro(nota_livro);
+        
+        return objlivrodto;
     }
     
     private void excluirLivro() {
