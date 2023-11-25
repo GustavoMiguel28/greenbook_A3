@@ -105,6 +105,7 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
         lblCidade.setText("Cidade:");
 
         txtId.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtId.setText("Campo automático");
         txtId.setEnabled(false);
 
         txtTipo.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N

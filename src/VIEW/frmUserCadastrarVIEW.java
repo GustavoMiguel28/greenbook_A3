@@ -87,7 +87,7 @@ public class frmUserCadastrarVIEW extends javax.swing.JFrame {
         lblGenero.setText("Gênero:");
 
         txtId.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtId.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtId.setText("Campo automático");
         txtId.setEnabled(false);
 
         txtNome.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
