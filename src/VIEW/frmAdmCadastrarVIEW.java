@@ -7,15 +7,14 @@ import javax.swing.JOptionPane;
 /*
  * @author Gustavo Moreno
  */
+
 public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmAdmCadastar
-     */
     public frmAdmCadastrarVIEW() {
         initComponents();
     }
 
+    // Componentes visuais - gerados pelo NetBeans
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -93,7 +92,7 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
         lblSexo.setText("Sexo:");
 
         lblTipo.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        lblTipo.setText("Tipo:");
+        lblTipo.setText("Genêro:");
 
         lblEmail.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblEmail.setText("E-mail:");
@@ -282,6 +281,7 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Botão para confirmar cadastro do novo usuário
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         cadastrar();
         frmAdmHomeVIEW objfrmadmhomeview = new frmAdmHomeVIEW();
@@ -290,6 +290,7 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
+    // Botão para cancelar ação de cadastro e retornar para a tela anterior
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         frmAdmHomeVIEW objfrmadmhomeview = new frmAdmHomeVIEW();
         objfrmadmhomeview.setVisible(true);
@@ -297,15 +298,8 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -322,12 +316,7 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frmAdmCadastrarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frmAdmCadastrarVIEW().setVisible(true);
@@ -365,6 +354,7 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
     private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
     
+    // Função para cadastrar dados do novo usuário
     private void cadastrar() {
         String login_usuario, senha_usuario, nome_usuario, sexo_usuario, tipo_usuario, email_usuario, estado_usuario, cidade_usuario, rua_usuario;
         int idade_usuario;

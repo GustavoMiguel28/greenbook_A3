@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 /*
  * @author Gustavo Moreno
  */
+
 public class frmUserAvaliarVIEW extends javax.swing.JFrame {
     
     UsuarioDTO objusuariodto;
@@ -20,6 +21,7 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
         this.objusuariodto = objusuariodto;
     }
 
+    // Componentes visuais - gerados pelo NetBeans
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -254,6 +256,7 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Botão para confirmar avaliação do livro
     private void btnAvaliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaliarActionPerformed
         avaliarLivro();
         
@@ -263,6 +266,7 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnAvaliarActionPerformed
 
+    // Botão para cancelar avaliação e retornar para a tela anterior
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         frmUserBibliotecaVIEW objfrmuserbibliotecaview = new frmUserBibliotecaVIEW(objusuariodto);
         objfrmuserbibliotecaview.setVisible(true);
@@ -270,19 +274,13 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    // Botão para adicionar livro aos favoritos
     private void btnFavoritarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFavoritarActionPerformed
         favoritarLivro();
     }//GEN-LAST:event_btnFavoritarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -299,40 +297,7 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frmUserAvaliarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 LivroDTO objlivrodto = new LivroDTO();
@@ -365,6 +330,7 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
     private javax.swing.JTextField txtQtdNotas;
     // End of variables declaration//GEN-END:variables
 
+    // Função para carregar dados do livro que será avaliado
     private void carregarDadosLivroAvaliar(LivroDTO objlivrodto) {
         int id_livro, qtd_notas;
         String nome_livro, autor_livro, genero_livro, imagem_livro;
@@ -390,6 +356,7 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
         txtNota.setText(Double.toString(nota_livro));
     }
     
+    // Função para avaliar (nota) o livro
     private void avaliarLivro() {
         int id_livro;
         double nota_livro_avaliado;
@@ -407,6 +374,7 @@ public class frmUserAvaliarVIEW extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Nota enviada!");
     }
     
+    // Função para favoritar livro
     private void favoritarLivro() {
         int id_livro;
         

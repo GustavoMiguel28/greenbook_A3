@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 /*
  * @author Gustavo Moreno
  */
+
 public class frmUserMeuslivrosCadastrarVIEW extends javax.swing.JFrame {
     
     UsuarioDTO objusuariodto;
@@ -21,6 +22,7 @@ public class frmUserMeuslivrosCadastrarVIEW extends javax.swing.JFrame {
         this.objusuariodto = objusuariodto;
     }
 
+    // Componentes visuais - gerados pelo NetBeans
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -234,6 +236,7 @@ public class frmUserMeuslivrosCadastrarVIEW extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Botão para confirmar ação de cadastro do livro
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         cadastrar();
         
@@ -243,10 +246,12 @@ public class frmUserMeuslivrosCadastrarVIEW extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
+    // Botão para buscar imagem da capa do novo livro
     private void btnAdicionarImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarImagemActionPerformed
         selecionarImagem();
     }//GEN-LAST:event_btnAdicionarImagemActionPerformed
 
+    // Função para cancelar ação de cadastro e retornar a tela anterior
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         frmUserMeuslivrosMeuslivrosVIEW objfrmusermeuslivrosmeuslivrosview = new frmUserMeuslivrosMeuslivrosVIEW(objusuariodto);
         objfrmusermeuslivrosmeuslivrosview.setVisible(true);
@@ -254,15 +259,8 @@ public class frmUserMeuslivrosCadastrarVIEW extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -279,24 +277,7 @@ public class frmUserMeuslivrosCadastrarVIEW extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frmUserMeuslivrosCadastrarVIEW.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 UsuarioDTO objusuariodto = new UsuarioDTO();
@@ -327,6 +308,7 @@ public class frmUserMeuslivrosCadastrarVIEW extends javax.swing.JFrame {
     private javax.swing.JTextField txtNota;
     // End of variables declaration//GEN-END:variables
     
+    // Função para cadastrar dados do novo livro
     private void cadastrar() {
         String nome_livro, autor_livro, genero_livro, imagem_livro;
         double nota_livro;
@@ -355,6 +337,7 @@ public class frmUserMeuslivrosCadastrarVIEW extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Novo livro cadastrado no sistema!");
     }
     
+    // Função para selecionar e guardar caminho da imagem de capa
     public void selecionarImagem() {
         JFileChooser arquivo = new JFileChooser();
         arquivo.setDialogTitle("Selecione uma imagem");
