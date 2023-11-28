@@ -1,9 +1,9 @@
 package DTO;
 
-/**
- *
+/*
  * @author Gustavo Moreno
  */
+
 public class LivroDTO {
     
     private int id_livro, qtd_notas;
