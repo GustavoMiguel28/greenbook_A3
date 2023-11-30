@@ -344,60 +344,6 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void txtLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLoginKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtSenha.requestFocus();
-        }
-    }//GEN-LAST:event_txtLoginKeyPressed
-
-    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtNome.requestFocus();
-        }
-    }//GEN-LAST:event_txtSenhaKeyPressed
-
-    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtSexo.requestFocus();
-        }
-    }//GEN-LAST:event_txtNomeKeyPressed
-
-    private void txtSexoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSexoKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtIdade.requestFocus();
-        }
-    }//GEN-LAST:event_txtSexoKeyPressed
-
-    private void txtIdadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdadeKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtTipo.requestFocus();
-        }
-    }//GEN-LAST:event_txtIdadeKeyPressed
-
-    private void txtTipoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtEmail.requestFocus();
-        }
-    }//GEN-LAST:event_txtTipoKeyPressed
-
-    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtEstado.requestFocus();
-        }
-    }//GEN-LAST:event_txtEmailKeyPressed
-
-    private void txtEstadoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtCidade.requestFocus();
-        }
-    }//GEN-LAST:event_txtEstadoKeyPressed
-
-    private void txtCidadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCidadeKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txtRua.requestFocus();
-        }
-    }//GEN-LAST:event_txtCidadeKeyPressed
-
     public static void main(String args[]) {
 
         try {
