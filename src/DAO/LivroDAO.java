@@ -25,12 +25,12 @@ public class LivroDAO {
         
         try {
             String sql = "SELECT A.id_livro, A.nome_livro, A.autor_livro, A.genero_livro, "
-                         + "COUNT(DISTINCT id_nota) AS qtd_notas, ROUND(AVG(B.nota_livro), 1) AS nota_livro "
+                         + "COUNT(DISTINCT B.id_nota) AS qtd_notas, ROUND(AVG(B.nota_livro), 1) AS nota_livro "
                          + "FROM livro AS A "
                          + "LEFT JOIN livro_nota AS B "
                          + "ON A.id_livro = B.id_livro "
                          + "GROUP BY A.id_livro, A.nome_livro, A.autor_livro, A.genero_livro "
-                         + "ORDER BY AVG(B.nota_livro) DESC, COUNT(DISTINCT id_nota) DESC, A.nome_livro ASC";
+                         + "ORDER BY nota_livro DESC, qtd_Notas DESC, A.nome_livro ASC";
             pstm = conn.prepareStatement(sql);
             
             ResultSet rs = pstm.executeQuery();
@@ -67,7 +67,7 @@ public class LivroDAO {
                          + "ON A.id_livro = B.id_livro "
                          + "WHERE A.id_usuario = ? "
                          + "GROUP BY A.id_livro, A.nome_livro, A.autor_livro, A.genero_livro "
-                         + "ORDER BY AVG(B.nota_livro) DESC, COUNT(DISTINCT id_nota) DESC, A.nome_livro ASC";
+                         + "ORDER BY nota_livro DESC, qtd_Notas DESC, A.nome_livro ASC";
             pstm = conn.prepareStatement(sql);
             pstm.setInt(1, objusuariodto.getId_usuario());
             
@@ -148,7 +148,7 @@ public class LivroDAO {
                          + "WHERE A.id_usuario != ? " 
                          + "AND A.id_livro NOT IN (SELECT DISTINCT id_livro FROM livro_favorito WHERE id_usuario = ?) " 
                          + "GROUP BY A.id_livro, A.nome_livro, A.autor_livro, A.genero_livro, A.imagem_livro " 
-                         + "ORDER BY Class_livro ASC, AVG(B.nota_livro) DESC, COUNT(DISTINCT id_nota) DESC, A.nome_livro ASC "
+                         + "ORDER BY Class_livro ASC, nota_livro DESC, qtd_Notas DESC, A.nome_livro ASC "
                          + "LIMIT 10";
             pstm = conn.prepareStatement(sql);
             pstm.setInt(1, objusuariodto.getId_usuario());

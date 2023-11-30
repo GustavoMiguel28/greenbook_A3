@@ -311,6 +311,9 @@
           <Font name="Trebuchet MS" size="12" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTipoKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblIdade">
       <Properties>
@@ -337,6 +340,9 @@
           <Font name="Trebuchet MS" size="12" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtLoginKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSenha">
       <Properties>
@@ -344,6 +350,9 @@
           <Font name="Trebuchet MS" size="12" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSenhaKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNome">
       <Properties>
@@ -351,6 +360,9 @@
           <Font name="Trebuchet MS" size="12" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNomeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSexo">
       <Properties>
@@ -358,6 +370,9 @@
           <Font name="Trebuchet MS" size="12" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSexoKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtIdade">
       <Properties>
@@ -365,6 +380,9 @@
           <Font name="Trebuchet MS" size="12" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIdadeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmail">
       <Properties>
@@ -372,6 +390,9 @@
           <Font name="Trebuchet MS" size="12" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmailKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEstado">
       <Properties>
@@ -379,6 +400,9 @@
           <Font name="Trebuchet MS" size="12" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEstadoKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCidade">
       <Properties>
@@ -386,6 +410,9 @@
           <Font name="Trebuchet MS" size="12" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCidadeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblRua">
       <Properties>

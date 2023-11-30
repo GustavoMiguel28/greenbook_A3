@@ -2,6 +2,7 @@ package VIEW;
 
 import DAO.UsuarioDAO;
 import DTO.UsuarioDTO;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /*
@@ -108,6 +109,11 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
         txtId.setEnabled(false);
 
         txtTipo.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtTipo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTipoKeyPressed(evt);
+            }
+        });
 
         lblIdade.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblIdade.setText("Idade:");
@@ -121,20 +127,60 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
         });
 
         txtLogin.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtLoginKeyPressed(evt);
+            }
+        });
 
         txtSenha.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
+            }
+        });
 
         txtNome.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeKeyPressed(evt);
+            }
+        });
 
         txtSexo.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtSexo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSexoKeyPressed(evt);
+            }
+        });
 
         txtIdade.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtIdade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtIdadeKeyPressed(evt);
+            }
+        });
 
         txtEmail.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmailKeyPressed(evt);
+            }
+        });
 
         txtEstado.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtEstado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEstadoKeyPressed(evt);
+            }
+        });
 
         txtCidade.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        txtCidade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCidadeKeyPressed(evt);
+            }
+        });
 
         lblRua.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         lblRua.setText("Rua:");
@@ -297,6 +343,60 @@ public class frmAdmCadastrarVIEW extends javax.swing.JFrame {
                 
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLoginKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtSenha.requestFocus();
+        }
+    }//GEN-LAST:event_txtLoginKeyPressed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtNome.requestFocus();
+        }
+    }//GEN-LAST:event_txtSenhaKeyPressed
+
+    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtSexo.requestFocus();
+        }
+    }//GEN-LAST:event_txtNomeKeyPressed
+
+    private void txtSexoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSexoKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtIdade.requestFocus();
+        }
+    }//GEN-LAST:event_txtSexoKeyPressed
+
+    private void txtIdadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdadeKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtTipo.requestFocus();
+        }
+    }//GEN-LAST:event_txtIdadeKeyPressed
+
+    private void txtTipoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtEmail.requestFocus();
+        }
+    }//GEN-LAST:event_txtTipoKeyPressed
+
+    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtEstado.requestFocus();
+        }
+    }//GEN-LAST:event_txtEmailKeyPressed
+
+    private void txtEstadoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtCidade.requestFocus();
+        }
+    }//GEN-LAST:event_txtEstadoKeyPressed
+
+    private void txtCidadeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCidadeKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtRua.requestFocus();
+        }
+    }//GEN-LAST:event_txtCidadeKeyPressed
 
     public static void main(String args[]) {
 
